@@ -1,5 +1,6 @@
 import React from 'react';
 import { ColumnProps } from './Column.model';
+import { CardComponent } from '..';
 
 import './Column.styles.css';
 
@@ -12,7 +13,7 @@ export const ColumnComponent = ({
     <div className='column-container'>
       <h2 className='title'>{title}</h2>
       <div className='count'>{`Count ${count}`}</div>
-      {data.map(dt=>(<div key={dt.message}>{dt.message}</div>))}
+      {data.map(dt=>(<CardComponent key={dt.message} message={dt.message} priority={dt.priority} />))}
     </div>
   )
 }

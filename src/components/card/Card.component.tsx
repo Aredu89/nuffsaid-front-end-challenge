@@ -1,16 +1,27 @@
 import React from 'react';
 import { CardProps } from './Card.model';
-import Button from '@mui/material/Button';
+
+import './Card.styles.css';
 
 export const CardComponent = ({
   message,
   priority
 }: CardProps) => {
+  const getBackgroundColor = (): string => {
+    switch(priority) {
+      case 0:
+        return 'error';
+      case 1:
+        return 'warning';
+      default:
+        return 'info';
+    }
+  }
   return (
-    <div className='card-container'>
+    <div className={`card-container ${getBackgroundColor()}`}>
       <div className='message'>{message}</div>
       <div className='button-container'>
-        <Button variant="text">Clear</Button>
+        <button className='clear-button' type="button">Clear</button>
       </div>
     </div>
   )
