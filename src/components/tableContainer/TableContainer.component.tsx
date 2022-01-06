@@ -11,4 +11,4 @@ export const TableContainer = ({ errors, warnings, infos, clearOne }: TableConta
       <ColumnComponent title='Info Type 3' data={infos} clearOne={clearOne} />
     </TableContainerStyled>
   )
-}
+};
