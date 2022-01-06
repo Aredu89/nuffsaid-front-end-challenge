@@ -2,5 +2,6 @@ import { Message } from "../../Api";
 
 export interface ColumnProps {
   title: string;
-  data: Message[]
+  data: Message[];
+  clearOne: (ms: Message) => void;
 }

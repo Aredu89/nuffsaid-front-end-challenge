@@ -5,7 +5,8 @@ import './Card.styles.css';
 
 export const CardComponent = ({
   message,
-  priority
+  priority,
+  onClear,
 }: CardProps) => {
   const getBackgroundColor = (): string => {
     switch(priority) {
@@ -21,7 +22,13 @@ export const CardComponent = ({
     <div className={`card-container ${getBackgroundColor()}`}>
       <div className='message'>{message}</div>
       <div className='button-container'>
-        <button className='clear-button' type="button">Clear</button>
+        <button
+          className='clear-button'
+          type="button"
+          onClick={() => onClear({ message, priority })}
+        >
+          Clear
+        </button>
       </div>
     </div>
   )

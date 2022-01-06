@@ -7,13 +7,14 @@ import './Column.styles.css';
 export const ColumnComponent = ({
   title,
   data,
+  clearOne,
 }: ColumnProps) => {
   const count = data.length;
   return (
     <div className='column-container'>
       <h2 className='title'>{title}</h2>
       <div className='count'>{`Count ${count}`}</div>
-      {data.map(dt=>(<CardComponent key={dt.message} message={dt.message} priority={dt.priority} />))}
+      {data.map(dt=>(<CardComponent key={dt.message} message={dt.message} priority={dt.priority} onClear={clearOne} />))}
     </div>
   )
 }

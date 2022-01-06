@@ -4,9 +4,16 @@ import { StyledButton } from './Button.styles';
 
 export const ButtonComponent = ({
   description,
+  onButtonclick,
 }: ButtonProps): ReactElement => {
 
   return (
-    <StyledButton variant="contained" size="medium">{description}</StyledButton>
+    <StyledButton
+      variant="contained"
+      size="medium"
+      onClick={()=>onButtonclick()}
+    >
+      {description}
+    </StyledButton>
   )
 };

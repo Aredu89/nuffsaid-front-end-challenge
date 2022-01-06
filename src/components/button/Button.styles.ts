@@ -10,4 +10,6 @@ export const StyledButton = styled(Button)(({ theme }) => ({
     backgroundColor: '#60C076',
   },
   margin: '3px',
+  display: 'flex',
+  alignItems: 'center',
 }));
