@@ -18,7 +18,7 @@ const App: React.FC<{}> = () => {
     const cleanUp = generateMessage((message: Message) => {
       if(message.priority === 0){
         toast.dismiss();
-        toast(message.message);
+        toast.error(message.message);
       }
       setMessages(oldMessages => [message, ...oldMessages]);
     });

@@ -1,7 +1,11 @@
 import React from 'react';
 import { CardProps } from './Card.model';
-
-import './Card.styles.css';
+import {
+  CardContainerStyled,
+  CardMessageStyled,
+  CardButtonContainerStyled,
+  ClearButtonStyled,
+} from './Card.styles';
 
 export const CardComponent = ({
   message,
@@ -11,25 +15,25 @@ export const CardComponent = ({
   const getBackgroundColor = (): string => {
     switch(priority) {
       case 0:
-        return 'error';
+        return '#F56236';
       case 1:
-        return 'warning';
+        return '#FCE788';
       default:
-        return 'info';
+        return '#88FCA3';
     }
-  }
+  };
   return (
-    <div className={`card-container ${getBackgroundColor()}`}>
-      <div className='message'>{message}</div>
-      <div className='button-container'>
-        <button
+    <CardContainerStyled color={getBackgroundColor()}>
+      <CardMessageStyled>{message}</CardMessageStyled>
+      <CardButtonContainerStyled>
+        <ClearButtonStyled
           className='clear-button'
           type="button"
           onClick={() => onClear({ message, priority })}
         >
           Clear
-        </button>
-      </div>
-    </div>
+        </ClearButtonStyled>
+      </CardButtonContainerStyled>
+    </CardContainerStyled>
   )
 };

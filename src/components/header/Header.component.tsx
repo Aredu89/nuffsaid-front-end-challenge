@@ -1,12 +1,11 @@
 import React, { ReactElement } from 'react';
 import { HeaderProps } from './Header.model';
-
-import './Header.styles.css';
+import { HeaderContainerStyled } from './Header.styles';
 
 export const HeaderComponent = ({
   title,
 }: HeaderProps): ReactElement => (
-  <div className='header-container'>
+  <HeaderContainerStyled>
     {title}
-  </div>
+  </HeaderContainerStyled>
 );

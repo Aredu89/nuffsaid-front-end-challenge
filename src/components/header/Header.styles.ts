@@ -1,4 +1,6 @@
-.header-container {
+import styled from 'styled-components';
+
+export const HeaderContainerStyled = styled.div`
   height: 40px;
   font-size: 30px;
   font-weight: 700;
@@ -6,4 +8,4 @@
   display: flex;
   align-items: flex-start;
   margin-bottom: 5px;
-}
+`
