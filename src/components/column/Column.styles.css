@@ -1,0 +1,12 @@
+.column-container {
+  width: 300px;
+  margin: 5px;
+}
+
+.column-container .title {
+  margin-bottom: 1px;
+}
+
+.column-container .count {
+  margin-bottom: 5px;
+}

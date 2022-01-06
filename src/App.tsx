@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import generateMessage, { Message } from './Api';
 
-import { HeaderComponent, ButtonsContainer } from './components'; 
+import {
+  ButtonsContainer,
+  HeaderComponent,
+  TableContainer,
+} from './components'; 
+import { processData } from './helpers/data';
 
 const App: React.FC<{}> = () => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -14,11 +19,13 @@ const App: React.FC<{}> = () => {
     return cleanUp;
   }, [setMessages]);
 
+  const { errors, warnings, infos } = processData({ data: messages});
+
   return (
     <div>
       <HeaderComponent title='nuffsaid.com Coding Challenge' />
       <ButtonsContainer />
-      {messages?.map?.(msg => <div key={msg?.message}>{msg?.message}</div>)}
+      <TableContainer errors={errors} warnings={warnings} infos={infos} />
     </div>
   );
 }

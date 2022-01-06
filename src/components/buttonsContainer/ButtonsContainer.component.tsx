@@ -1,9 +1,11 @@
 import React, { ReactElement } from 'react';
+import { ButtonComponent } from '..';
 
 import './ButtonsContainer.styles.css';
 
 export const ButtonsContainer = (): ReactElement => (
   <div className='buttons-container'>
-    Hello
+    <ButtonComponent description='Stop' />
+    <ButtonComponent description='Clear' />
   </div>
 )
