@@ -1,4 +1,4 @@
-export interface ButtonContainerProps {
+export interface ButtonsContextProps {
   clearAll: () => void;
   stopStart: () => void;
   stop: boolean;

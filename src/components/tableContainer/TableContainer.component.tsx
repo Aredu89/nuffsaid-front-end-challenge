@@ -1,9 +1,10 @@
 import React, { ReactElement } from 'react';
 import { ColumnComponent } from '..';
-import { TableContainerProps } from './TableContainer.model';
 import { TableContainerStyled } from './TableContainer.styles';
+import { useTableContext } from '../../hooks';
 
-export const TableContainer = ({ errors, warnings, infos, clearOne }: TableContainerProps): ReactElement => {
+export const TableContainer = (): ReactElement => {
+  const { errors, warnings, infos, clearOne } = useTableContext();
   return (
     <TableContainerStyled>
       <ColumnComponent title='Error Type 1' data={errors} clearOne={clearOne} />
